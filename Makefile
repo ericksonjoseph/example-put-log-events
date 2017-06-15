@@ -5,24 +5,11 @@ ROOT = $(shell pwd)/
 
 all: help
 
-# TARGET:update             Performs a build with new code & existing deps
-update: zip
+create-log-group:
+	aws logs create-log-group --log-group-name cloud-analytics
 
-# TARGET:build              Performs a clean build, installs deps etc
-build: clean deps zip
-
-zip:
-	cd $(ROOT) && \
-		zip -r lambda.zip src/index.js node_modules
-
-deps:
-	cd $(ROOT) \
-		&& rm -r $(ROOT)node_modules; \
-		npm install
-
-clean:
-	cd $(ROOT) \
-		&& rm *.zip; \
+stream:
+	aws logs create-log-stream --log-group-name cloud-analytics --log-stream-name data-stream
 
 # TARGET:help               Help
 help:
