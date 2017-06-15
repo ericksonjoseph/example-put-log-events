@@ -1,0 +1,23 @@
+{
+    "name": "cloud-analytics",
+    "version": "0.1.0",
+    "title": "CloudAnalytics.js",
+    "author": "Erickson Joseph <erickson1.joseph@gmail.com>",
+    "description": "Parses CWL event data and sends to the configured elastic cluster",
+    "keywords": [
+        "lambda",
+        "elastic"
+    ],
+    "contributors": [
+        "Erickson Joseph <erickson1.joseph@gmail.com>"
+    ],
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "https://bitbucket.com/erickson1/cloud-analytics"
+    },
+    "main": "src/index.js",
+    "dependencies": {
+        "ua-parser-js": "0.7.12"
+    }
+}
